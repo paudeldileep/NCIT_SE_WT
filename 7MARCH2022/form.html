@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Simple form</title>
+  </head>
+  <body>
+    <h2>Sign up form</h2>
+    <hr />
+    <form method="post" action="abc.php">
+      Name:<input
+        type="text"
+        name="username"
+        required="required"
+        size="20"
+        value="Ujjwal"
+      />
+      <br />
+      <br />
+      Email:<input type="email" name="useremail" placeholder="Enter email" />
+      <br />
+      <br />
+      Password:
+      <input type="password" name="userpass" maxlength="14" minlength="10" />
+      <br />
+      <br />
+      Choose Gender:
+      <label><input type="radio" value="M" name="gender" />Male</label>
+      <label><input type="radio" value="F" name="gender" /> Female</label>
+      <label><input type="radio" value="O" name="gender" /> Other</label>
+      <br />
+      <br />
+      Your Interests:
+      <label><input type="checkbox" value="iot" name="interest" />IOT</label>
+      <label
+        ><input
+          type="checkbox"
+          value="it"
+          name="interest"
+          checked="checked"
+        />IT</label
+      >
+      <label><input type="checkbox" value="math" name="interest" />Math</label>
+      <label><input type="checkbox" value="is" name="interest" />IS</label>
+      <br />
+      <br />
+      Choose country:
+      <select name="country">
+        <option>--choose your country--</option>
+        <option>Nepal</option>
+        <option>China</option>
+        <option>India</option>
+        <option>US</option>
+        <option>UK</option>
+      </select>
+      <br />
+      <br />
+
+      <input type="submit" />
+      <input type="reset" />
+    </form>
+  </body>
+</html>
