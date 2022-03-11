@@ -1,0 +1,58 @@
+<!-- form with table -->
+<html>
+  <head>
+    <title>Form + table</title>
+  </head>
+  <body>
+    <h1>Form with table</h1>
+    <hr />
+    <form method="post" action="process.php">
+      <table border="1" cellspacing="0">
+        <tr>
+          <th colspan="2">SIGN UP</th>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>
+            <input
+              type="text"
+              name="name"
+              required="required"
+              placeholder="First name middle name last name"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><input type="email" name="email" /></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td>
+            <input
+              type="password"
+              name="password"
+              minlength="6"
+              placeholder="Minimum 6 characters"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>Gender</td>
+          <td>
+            <label>Male<input type="radio" name="gender" value="M" /></label>
+            <label>Female<input type="radio" name="gender" value="F" /></label>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="reset" value="Clear Form" /></td>
+          <td align="center"><input type="submit" value="SIGN UP" /></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">*Your data will be secure</td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
