@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>CSS SELECTORS</title>
+
+    <style>
+      /* element selector */
+      p {
+        background-color: black;
+        color: white;
+      }
+
+      /* class selector */
+      .head_one {
+        color: red;
+        text-align: center;
+      }
+      #head_one {
+        color: cadetblue;
+      }
+
+      /* id selector */
+      #head_intro {
+        color: blue;
+        text-align: left;
+      }
+
+      /* universal selector */
+      * {
+        font-family: arial;
+      }
+
+      /* descendant selector */
+      p span {
+        color: green;
+      }
+
+      /* group selector */
+      p,
+      span {
+        font-size: 50;
+      }
+
+      .heading {
+        background-color: antiquewhite;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="head_one" class="heading head_one">CSS BASICS</h1>
+    <hr />
+    <h2 class="heading" id="head_intro">Intro to CSS</h2>
+    <p class="para_one">Css means cascading style sheet!</p>
+    <hr />
+    <h2 class="heading head_two">CSS Syntax</h2>
+    <p class="para_two">
+      <span>selector</span>: property:value example: h1{ color:red; }
+    </p>
+  </body>
+</html>
