@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title></title>
+    <style>
+      /* font shorthand property 
+                points to note :
+                If font is specified as a shorthand for several font-related properties, then:
+
+                it must include values for:
+                     <font-size>
+                     <font-family>
+                it may optionally include values for:
+                    <font-style>
+                    <font-variant>
+                    <font-weight>
+                    <font-stretch>
+                    <line-height>
+        ** font-style, font-variant and font-weight must precede font-size
+            font-variant may only specify the values defined in CSS 2.1, that is normal and small-caps
+            font-stretch may only be a single keyword value.
+            line-height must immediately follow font-size, preceded by "/", like this: "16px/3"
+            font-family must be the last value specified.
+            Syntax: <'font-style'> || <font-variant-css21> || <'font-weight'> || <'font-stretch'> ]? <'font-size'> [ / <'line-height'> ]? <'font-family'> ] 
+            */
+      h1 {
+        font: italic 40px sans-serif;
+      }
+      .f1 {
+        font-style: italic;
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+      }
+      p {
+        text-indent: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Font properties</h1>
+    <hr />
+    <h2>
+      <span class="f1">font-style</span>
+      <span>font-variant</span>
+      <span>font-weight</span>
+      <span>font-stretch</span>
+      <span>font-size</span>
+      <span>line-height</span>
+      <span>font-family</span>
+    </h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Et tenetur
+      veritatis veniam facilis officiis, in ex ea voluptate, aliquam soluta
+      corrupti quisquam quaerat, dignissimos cupiditate doloribus provident ipsa
+      rem minus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+      unde, aspernatur possimus necessitatibus repellendus dolore quos, odio
+      molestias suscipit itaque ipsam, ut voluptas velit harum nihil ex nulla
+      quam quaerat? Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      Enim, accusantium. Et quisquam numquam excepturi perspiciatis! Sequi
+      voluptatum nihil ab suscipit voluptas sed mollitia dicta iusto officia?
+      Magnam voluptatibus laudantium tempora.
+    </p>
+  </body>
+</html>

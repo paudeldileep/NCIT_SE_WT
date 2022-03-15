@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Pseudo class</title>
+    <style>
+      .link {
+        font-size: larger;
+      }
+      .link:link {
+        color: red;
+        text-decoration: none;
+      }
+      .link:hover {
+        color: blue;
+        text-decoration: underline;
+      }
+
+      .link:visited {
+        color: green;
+        text-decoration: none;
+      }
+      .link:active {
+        color: aqua;
+      }
+      input {
+        border: none;
+        border-bottom: 2px solid black;
+        outline: none;
+      }
+      input:focus {
+        border: 4px solid red;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pseudo classes</h1>
+    <hr />
+
+    <p>Link1:<a href="https://ncit.edu.np" class="link">Link</a></p>
+    <p>Link2:<a href="https://ncit.edu.np" class="link">Link2</a></p>
+    <p>
+      Link3:<a href="https://pu.edu.np" class="link" target="_blank">Link3</a>
+    </p>
+    <p>Link4:<a href="https://google.com" class="link">Link4</a></p>
+    <form>
+      Name:<input type="text" name="username" id="username" /><br />
+      Email:<input type="email" name="useremail" id="useremail" />
+    </form>
+  </body>
+</html>
