@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Sign In</title>
+    <link rel="stylesheet" type="text/css" href="../css/sign_in.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="sign_in_form">
+        <form action="process_sign_in.php" method="post">
+          <h1 class="form_title">Sign In</h1>
+          <div class="button_group">
+            <button class="button" type="button">
+              <a class="link" href="">Sign In with Facebook</a>
+            </button>
+            <button class="button" type="button">
+              <a class="link" href="">Sign In with Google</a>
+            </button>
+          </div>
+          <div class="or_text"><span>OR</span></div>
+          <input
+            class="input_field"
+            type="text"
+            name="username"
+            placeholder="Username"
+            required
+          />
+          <input
+            class="input_field"
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <div class="extra_info">
+            <span
+              ><input
+                type="checkbox"
+                id="remember_me"
+                name="remember_me"
+              /><label for="remember_me"> Keep me signed in</label></span
+            >
+            <a class="link" href="">Forgot Password?</a>
+          </div>
+          <div class="action_button_container">
+            <input class="button" type="submit" name="submit" value="Sign In" />
+          </div>
+          <div class="sign_up_section">
+            <span>Don't have an account?</span>
+            <a class="link" href="sign_up_form.html">Sign Up</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
