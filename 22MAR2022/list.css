@@ -1,0 +1,33 @@
+.list_icon {
+  list-style-image: url("icon.png");
+  /* list-style-position: inside; */
+}
+.list_icon li {
+  padding-left: 2px;
+  background-color: aquamarine;
+  vertical-align: middle;
+}
+
+.list_horizontal {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.list_horizontal li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  float: left;
+}
+
+.clear_fix {
+  clear: both;
+}
+
+.details {
+  margin-top: 50px;
+}
+
+.details img {
+  float: left;
+}
