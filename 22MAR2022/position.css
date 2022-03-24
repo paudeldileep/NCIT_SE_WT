@@ -15,10 +15,12 @@ body {
 
 .nav_bar {
   position: sticky;
-  top: 41px;
+  top: 10px;
+  right: 0px;
   margin-top: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: right;
+  z-index: 999;
 }
 
 .nav_links {
@@ -34,6 +36,12 @@ body {
   margin-right: 10px;
   font-size: larger;
   font-weight: bold;
+  transition: all 0.3s linear;
+}
+
+.nav_link:hover {
+  color: #ff0000;
+  text-decoration: underline;
 }
 
 .clear_fix {
@@ -58,16 +66,127 @@ body {
 
 .intro_div {
   float: left;
-  border-right: 2px solid red;
+
   width: 48%;
   height: 400px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .image_div {
   float: right;
   width: 48%;
-  border-left: 2px solid blue;
+
   height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.svg {
+  position: absolute;
+}
+
+.image_div img {
+  z-index: 1;
+  transition: all 0.3s linear;
+}
+
+@keyframes rotate1 {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(90deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+    /* border: 2px solid yellow;
+    border-radius: 50%; */
+  }
+  75% {
+    transform: rotate(270deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.image_div img:hover {
+  /* transform: scale(1.5); */
+  animation: rotate1 0.5s infinite linear;
+}
+
+.intro_div p {
+  margin-top: -30px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.high_lighted_text {
+  color: #0f62fe;
+}
+
+.button_primary {
+  background-color: #0f62fe;
+  color: white;
+  padding: 10px 25px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px;
+  transition: all 1s ease-in-out;
+}
+
+.about {
+  height: 400px;
+}
+
+.button_primary:hover {
+  background-color: aqua;
+  color: black;
+  transform: scale(1.2);
+
+  box-shadow: -1px 5px 18px 1px rgba(0, 0, 0, 0.5);
+}
+
+.exam_button {
+  background-color: #0f62fe;
+  color: white;
+  padding: 10px 25px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px;
+  transition: all 1s linear;
+}
+
+.exam_details {
+  transition: all 1s linear;
+  transform: scale(0);
+  font-size: larger;
+  font-weight: bold;
+}
+
+/* .exam_button:hover .exam_details {
+  visibility: visible;
+} */
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.exam_section {
+  display: inline-block;
+}
+
+.exam_section:hover .exam_details {
+  transform: scale(1);
+}
+
+.exam_section:hover .exam_button {
+  transform: scale(1.1);
 }
