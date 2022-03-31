@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Arrays</title>
+    <script>
+      var superheroes = ["Ironman", "Krrish", "Shaktimaan"];
+      var superVillains = new Array("Thanos", "Amara", "Loki");
+
+      //printing array elements
+      //method 1: for loop
+      for (var i = 0; i < superheroes.length; i++) {
+        document.write(i + 1 + "." + superheroes[i]);
+        document.write("<br>");
+      }
+
+      document.write("<br>");
+      //method 2: for of
+      for (var sv of superVillains) {
+        document.write(sv + "<br>");
+      }
+
+      //method 3: for in
+      document.write("<ul>");
+      for (var i in superheroes) {
+        document.write("<li>" + superheroes[i] + "</li>");
+      }
+      document.write("</ul>");
+
+      document.write("<br>");
+      document.write("<h3>insertion and deletion</h3><br>");
+
+      //pop
+      var popped = superheroes.pop();
+      document.write(popped + " popped out!");
+
+      document.write("after pop:<br>");
+      for (var i = 0; i < superheroes.length; i++) {
+        document.write(i + 1 + "." + superheroes[i]);
+        document.write("<br>");
+      }
+    </script>
+  </head>
+  <body>
+    <h1>open console to view output</h1>
+  </body>
+</html>

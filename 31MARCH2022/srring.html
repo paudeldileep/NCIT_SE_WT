@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>string methods</title>
+    <script type="text/javascript">
+      var str = "My university is Pokhara University";
+
+      //charAt
+      var ch = str.charAt(4);
+      console.log("the character at index 4 is:", ch);
+
+      var i = str.indexOf("n");
+      console.log("the index of n:", i);
+
+      //substring
+      var sub = str.substring(4, 8);
+      console.log("substring between 2 and 5 :", sub);
+
+      //slice
+      var sl = str.slice(4, 8);
+      console.log("slice between 2 and 5 :", sl);
+
+      //lower and upper case
+      var low = str.toLowerCase();
+      console.log("the lower case:", low);
+
+      //var up = str.toUpperCase();
+      console.log("the upper case:", str.toUpperCase());
+
+      console.log("custom upper case:", str.charAt("3").toUpperCase());
+
+      //split
+      var arr = str.split(" ", 2);
+
+      console.log("splitted values:", arr);
+      console.log("first value:", arr[0]);
+
+      var newstr = str.replace("Pokhara", "Kathmandu");
+      console.log("new str:", newstr);
+      console.log("original:", str);
+    </script>
+  </head>
+  <body>
+    <h1>Open console to view output</h1>
+  </body>
+</html>
