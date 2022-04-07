@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Array splice</title>
+  </head>
+  <body>
+    <h1>Array splice</h1>
+
+    <script>
+      var colors = ["red", "green", "blue", "yellow"];
+
+      document.write("<h3>original array</h3>");
+      document.write("<ul>");
+      for (var i in colors) {
+        document.write("<li>" + colors[i] + "</li>");
+      }
+      document.write("</ul>");
+
+      //splicing
+      //var removed = colors.splice(1, 2); //returns removed element
+      //var removed = colors.splice(1, 1, "white");
+      var removed = colors.splice(1, 0, "pink");
+      document.write("<h3>removed elements</h3>");
+      document.write("<ul>");
+      for (var i in removed) {
+        document.write("<li>" + removed[i] + "</li>");
+      }
+      document.write("</ul>");
+      document.write("<h3>original array after splicing</h3>");
+      document.write("<ul>");
+      for (var i in colors) {
+        document.write("<li>" + colors[i] + "</li>");
+      }
+      document.write("</ul>");
+    </script>
+  </body>
+</html>

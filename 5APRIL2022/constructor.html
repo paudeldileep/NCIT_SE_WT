@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Constructors</title>
+  </head>
+  <body>
+    <h2>Constructors demo</h2>
+
+    <script>
+      // Constructor function
+      function student(name, age, rollNo) {
+        this.name = name;
+        this.age = age;
+        this.rollNo = rollNo;
+      }
+
+      var s1 = new student("John", 20, 1); // creating object
+      var s2 = new student("Mike", 21, 2); // creating object
+      //display object
+      document.write(s1.name + " " + s1.age + " " + s1.rollNo);
+      document.write("<br>");
+      document.write(s2.name + " " + s2.age + " " + s2.rollNo);
+    </script>
+  </body>
+</html>

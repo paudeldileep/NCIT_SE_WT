@@ -1,0 +1,37 @@
+<!-- onclick event example -->
+<html>
+  <head>
+    <title>Onclick</title>
+    <style>
+      span {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form onsubmit="handleSubmit(event)">
+        Name:<input type="text" name="name" id="name" placeholder="Username" />
+        <span id="name_error"></span>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <script>
+      // function
+      function handleSubmit(event) {
+        //prevent form submission
+        //event.preventDefault();
+
+        // get the form element
+        var name = document.getElementById("name");
+        var name_error = document.getElementById("name_error");
+        if (name.value == "") {
+          name_error.innerText = "Name is empty!";
+          //stop form submission
+          event.preventDefault();
+        }
+      }
+    </script>
+  </body>
+</html>

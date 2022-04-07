@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>String reverse</title>
+  </head>
+  <body>
+    <h1>String reverse</h1>
+
+    <script>
+      //   function str_reverse(str) {
+      //     //var str_arr = str.split("");
+      //     var str_arr = str.split(" ");
+      //     var str_rev = str_arr.reverse();
+      //     //var str_rev_str = str_rev.join(" ");
+      //     var str_rev_str = str_rev.join(" ");
+      //     return str_rev_str;
+      //   }
+      //   function with two arguments string and seperator
+      function str_reverse(str, sep) {
+        var str_arr = str.split(sep);
+        var str_rev = str_arr.reverse();
+        var str_rev_str = str_rev.join(sep);
+        //var str_rev_str=str.split(sep).reverse().join(sep);
+        return str_rev_str;
+      }
+
+      var str = prompt("Enter a string");
+      var seperator = prompt("Enter a seperator");
+      var reverse_string = str_reverse(str, seperator);
+      document.write("<h3>Original string: " + str + "</h3>");
+      document.write("<h3>Reverse string: " + reverse_string + "</h3>");
+    </script>
+  </body>
+</html>

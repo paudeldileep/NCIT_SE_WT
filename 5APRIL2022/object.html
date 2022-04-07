@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Object</title>
+  </head>
+  <body></body>
+  <script>
+    var person = {
+      firstName: "John",
+      lastName: "Doe",
+      age: 50,
+      eyeColor: "blue",
+      fullName: function () {
+        return this.firstName + " " + this.lastName;
+      },
+    };
+    document.write(
+      person.firstName +
+        " " +
+        person.lastName +
+        " " +
+        person.age +
+        " " +
+        person["eyeColor"]
+    );
+    document.write("<br>");
+    document.write(person.fullName());
+
+    document.write("<br><h2>Looping through an Object</h2>");
+    for (var i in person) {
+      document.write(i + ": " + person[i] + "<br>");
+    }
+
+    // changing property
+    person.firstName = "Ujjwal";
+    document.write("<br>");
+    document.write(person.fullName());
+  </script>
+</html>

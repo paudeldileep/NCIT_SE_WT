@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title> </title>
+  </head>
+  <body>
+    <h1 id="headone">Heading One</h1>
+    <hr />
+    <h2>Element access demo</h2>
+    <p class="p">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quos
+      nihil, eum in porro quibusdam facilis rem reprehenderit commodi expedita
+      ducimus temporibus eligendi dolore officiis fugiat sint ex perferendis
+      consequatur.
+    </p>
+    <hr />
+    <h2>Element access demo</h2>
+    <p class="p">
+      Test paragraph : Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Maiores itaque quod impedit! Temporibus odit sequi blanditiis iste
+      exercitationem placeat quo, incidunt suscipit quisquam voluptatem quos
+      repellendus, nisi laborum similique amet.
+    </p>
+    <div id="form_div">
+      <form id="form1" name="form1">
+        Name:<input type="text" name="name" placeholder="Username" />
+        <span id="name_error"></span>
+      </form>
+    </div>
+
+    <script>
+      var headOne = document.getElementById("headone");
+      console.log(headOne);
+      headOne.style.color = "red";
+
+      //   element access by class name
+      var p = document.getElementsByClassName("p");
+      //console.log(p);
+      p[0].style.color = "blue";
+      p[1].style.backgroundColor = "gray";
+
+      //element access by each ones name
+      var input = document.form1.name;
+      input.value = "Ujjwal";
+
+      //showing error message
+      var error = document.getElementById("name_error");
+      //error.innerHTML = "<h2>Name is required</h2>";
+      error.innerText = "<h2>Name is required</h2>";
+
+      //accessing innerhtml of form1
+      var form = document.getElementById("form1");
+      console.log(form.innerHTML);
+      form.innerHTML =
+        "Email:<input type='email' name='email' placeholder='Email' />";
+    </script>
+  </body>
+</html>
