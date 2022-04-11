@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <title>Calculation</title>
+    <style>
+      .input_area {
+        padding-top: 20px;
+        height: 250px;
+        width: 500px;
+        background-color: gray;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .button {
+        width: 80%;
+        margin: auto;
+        visibility: hidden;
+      }
+      p {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Calculation</h2>
+    <hr />
+    <div class="input_area">
+      <div>
+        <input type="number" id="num1" name="num1" placeholder="Number 1" />
+        <input
+          type="text"
+          id="operator"
+          name="operator"
+          placeholder="Operator"
+          size="5"
+        />
+        <input type="number" id="num2" name="num2" placeholder="Number 2" />
+      </div>
+      <div class="row">
+        <input
+          type="button"
+          class="button"
+          value="Calculate"
+          onclick="calculate()"
+        />
+      </div>
+
+      <div class="answer">
+        <p>The answer is: <span id="answer"></span></p>
+      </div>
+    </div>
+
+    <script>
+      function calculate() {
+        var num1 = document.getElementById("num1").value;
+        var operator = document.getElementById("operator").value;
+        var num2 = document.getElementById("num2").value;
+        var result = 0;
+
+        // if(operator == "+"){
+        //     result = parseInt(num1) + parseInt(num2);
+        // }
+        // else if(operator == "-"){
+        //     result = parseInt(num1) - parseInt(num2);
+        // }
+        // else if(operator == "*"){
+        //     result = parseInt(num1) * parseInt(num2);
+        // }
+        // else if(operator == "/"){
+        //     result = parseInt(num1) / parseInt(num2);
+        // }
+        // else{
+        //     result = "Invalid Operator";
+        // }
+
+        switch (operator) {
+          case "+":
+            result = parseInt(num1) + parseInt(num2);
+            break;
+          case "-":
+            result = parseInt(num1) - parseInt(num2);
+            break;
+          case "*":
+            result = parseInt(num1) * parseInt(num2);
+            break;
+          case "/":
+            result = parseInt(num1) / parseInt(num2);
+            break;
+          default:
+            result = "Invalid Operator";
+        }
+        document.getElementById("answer").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>
