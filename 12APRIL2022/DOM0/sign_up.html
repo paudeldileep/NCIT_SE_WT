@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Sign Up</title>
+
+    <style>
+      div {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main_box">
+      <h1>Sign Up</h1>
+      <form method="post" action="#" id="myform">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" />
+          <span>(firstname middlename(optional) lastname)</span>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" />
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" /><span
+            >(minimum 6 characters)</span
+          >
+        </div>
+        <div>
+          <label for="confirm_password">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirm_password"
+            name="confirm_password"
+          />
+        </div>
+        <div>
+          <input type="submit" value="Sign Up" />
+        </div>
+      </form>
+    </div>
+    <script src="sign_up.js"></script>
+  </body>
+</html>
