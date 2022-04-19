@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>CurrentTarget</title>
+  </head>
+  <body>
+    <div class="center">
+      <h4>Choose your favourite subject</h4>
+      <input
+        type="checkbox"
+        id="subject1"
+        name="subject1"
+        value="Hyper Text Markup Language"
+      />HTML
+      <input
+        type="checkbox"
+        id="subject2"
+        name="subject2"
+        value="Cascading Stylesheet"
+      />CSS
+      <input
+        type="checkbox"
+        id="subject3"
+        name="subject3"
+        value="Java script"
+      />JS
+    </div>
+    <script>
+      var subject1 = document.getElementById("subject1");
+      var subject2 = document.getElementById("subject2");
+      var subject3 = document.getElementById("subject3");
+
+      subject1.addEventListener("click", msg, false);
+      subject2.addEventListener("click", msg, false);
+      subject3.addEventListener("click", msg, false);
+
+      function msg(e) {
+        console.log("clicked", e.currentTarget.value);
+      }
+    </script>
+  </body>
+</html>

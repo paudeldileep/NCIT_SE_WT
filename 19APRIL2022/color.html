@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Color</title>
+    <style>
+      #right {
+        width: 400px;
+        height: 400px;
+        border: 1px solid blue;
+      }
+      div {
+        margin-bottom: 10px;
+      }
+    </style>
+    <script></script>
+  </head>
+  <body>
+    <div id="left">
+      <div><input type="text" id="color" placeholder="Text Color" /></div>
+      <div><input type="text" id="bgcolor" placeholder="Bg Color" /></div>
+      <div><button id="button">Apply</button></div>
+    </div>
+    <div id="right">
+      <h3>Hello</h3>
+    </div>
+    <script>
+      var color = document.getElementById("color");
+      var bgcolor = document.getElementById("bgcolor");
+      var button = document.getElementById("button");
+      var right = document.getElementById("right");
+      button.addEventListener("click", change, false);
+      function change() {
+        right.style.color = color.value;
+        right.style.backgroundColor = bgcolor.value;
+      }
+    </script>
+  </body>
+</html>

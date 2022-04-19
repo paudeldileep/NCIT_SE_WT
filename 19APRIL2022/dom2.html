@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>DOM2</title>
+  </head>
+  <body>
+    <ul id="ul">
+      <li id="liOne">
+        <a id="aOne" href="#">Click here</a>
+      </li>
+      <li id="liTwo">
+        <a id="aTwo" href="#">Click here</a>
+      </li>
+      <li id="liThree">
+        <a id="aThree" href="#">Click here</a>
+      </li>
+    </ul>
+
+    <script>
+      // DOM2 event registration
+      document.getElementById("aOne").addEventListener("click", msg, false);
+      document.getElementById("liOne").addEventListener("click", msg, false);
+      document.getElementById("ul").addEventListener("click", msg, true);
+      function msg(e) {
+        console.log("clicked", e.currentTarget.id);
+      }
+    </script>
+  </body>
+</html>

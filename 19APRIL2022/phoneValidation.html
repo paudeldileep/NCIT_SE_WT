@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>Phone validation</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="center">
+        <h3>Enter phone number for OTP</h3>
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          placeholder="CountryCode-MobileNumber"
+        />
+        <input type="button" value="Send OTP" onclick="sendOTP()" />
+      </div>
+    </div>
+
+    <script>
+      function sendOTP() {
+        var phone = document.getElementById("phone").value;
+        //split country code and mobile number
+        var ifNepal = false;
+        var isValid = false;
+        var phoneArray = phone.split("-");
+        var countryCode = phoneArray[0];
+        var mobileNumber = phoneArray[1];
+        //check array length
+        if (phoneArray.length == 2) {
+          //check country code
+          if (countryCode.length > 2) {
+            //length of code is greater than 2
+
+            //check pattern 00977
+            var pos = countryCode.search(/^(00977)$/);
+            if (pos == 0) {
+              ifNepal = true;
+            }
+          } else {
+            alert("Enter valid country code");
+          }
+
+          //check mobile number 98XXXXXXXX
+          if (mobileNumber.length == 10) {
+            var pos = mobileNumber.search(/^(98\d{8})$/);
+            if (pos == 0) {
+              isValid = true;
+            }
+          } else {
+            alert("Enter valid mobile number");
+          }
+        } else {
+          alert("Enter valid phone number");
+        }
+
+        if (ifNepal && isValid) {
+          alert("OTP sent to your mobile number");
+        } else {
+          console.log("OTP not sent");
+        }
+      }
+    </script>
+  </body>
+</html>
