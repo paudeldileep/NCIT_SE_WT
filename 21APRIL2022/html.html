@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>wt</title>
+    <style>
+      .form {
+        border: 1px solid gray;
+        height: 100px;
+        width: 300px;
+        padding: 20px;
+      }
+      .manage {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+      #clickme {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <!-- <div class="manage">
+        <label>User Id: </label>
+        <input name="uid" type="text" id="uid" value="u_123"  /> onfocus="this.blur()"
+      </div> -->
+      <div class="manage">
+        <label>Password: </label>
+        <input name="password" type="password" id="password1" />
+      </div>
+      <div class="manage">
+        <label>Re-password:</label
+        ><input name="password1" type="password" id="password2" />
+      </div>
+      <div class="manage">
+        <input type="submit" value="submit" id="clickme" />
+      </div>
+    </div>
+    <script>
+      var pass2 = document.getElementById("password2");
+      var button = document.getElementById("clickme");
+      var uid = document.getElementById("uid");
+
+      uid.addEventListener("focus", disable, false);
+
+      function disable() {
+        document.getElementById("uid").blur();
+      }
+      //assigning event
+      // pass2.addEventListener("blur", validate, false);
+      button.addEventListener("click", validate, false);
+
+      function validate() {
+        var pass1 = document.getElementById("password1").value;
+        var pass2 = document.getElementById("password2").value;
+
+        if (pass1 == "" || pass2 == "") {
+          alert("password can't be empty");
+          document.getElementById("password1").focus();
+        } else {
+          if (pass1 !== pass2) {
+            alert("passwords doesn't match");
+            document.getElementById("password2").focus();
+          } else {
+            //password pattern
+            if (pass1.length < 6) {
+              alert("too few characters");
+            } else {
+              alert("validated");
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
