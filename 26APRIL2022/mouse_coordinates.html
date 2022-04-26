@@ -1,0 +1,62 @@
+<!-- The clientX property returns the horizontal coordinate (according to the client area) of the mouse pointer when a mouse event was triggered.
+
+The client area is the current window.
+
+Tip: To get the vertical coordinate (according to the client area) of the mouse pointer, use the clientY property.
+
+Note: This property is read-only. -->
+
+<!-- The screenX property returns the horizontal coordinate (according to the users computer screen) of the mouse pointer when an event was triggered.
+
+Tip: To get the vertical coordinate (according to the screen) of the mouse pointer, use the screenY property.
+
+Note: This property is read-only. -->
+<html>
+  <head>
+    <title>Mouse Coordinates</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #mouse_coordinates {
+        width: 400px;
+        height: 300px;
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mouse_coordinates"></div>
+    <div>
+      <p>Client:</p>
+      <p id="x_coordinate">X:</p>
+      <p id="y_coordinate">Y:</p>
+      <p>Screen:</p>
+      <p id="x_coord">X:</p>
+      <p id="y_coord">Y:</p>
+    </div>
+    <script>
+      document.getElementById("mouse_coordinates").onmouseover = getCoordinates;
+
+      function getCoordinates(event) {
+        var x = event.clientX;
+        var y = event.clientY;
+
+        var sx = event.screenX;
+        var sy = event.screenY;
+
+        document.getElementById("x_coordinate").innerHTML = "ClientX: " + x;
+        document.getElementById("y_coordinate").innerHTML = "ClientY: " + y;
+        document.getElementById("x_coord").innerHTML = "screenX: " + sx;
+        document.getElementById("y_coord").innerHTML = "screenY: " + sy;
+
+        // console.log("x: " + x);
+        // console.log("y: " + y);
+        // console.log("sx: " + sx);
+        // console.log("sy: " + sy);
+      }
+    </script>
+  </body>
+</html>

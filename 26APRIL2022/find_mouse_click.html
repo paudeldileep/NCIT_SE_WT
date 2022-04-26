@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Find mouse click</title>
+    <style>
+      body {
+        min-height: 100vh;
+      }
+      /* #msg {
+        visibility: hidden;
+        position: absolute;
+      } */
+      #pulse {
+        visibility: hidden;
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 82, 82, 1);
+        box-shadow: 0 0 0 0 rgba(255, 82, 82, 1);
+        margin: 10px;
+        height: 20px;
+        width: 20px;
+        transform: scale(1);
+        animation: pulse 1s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+        }
+        50% {
+          transform: scale(1.1);
+          box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+        }
+      }
+    </style>
+  </head>
+  <body onmousedown="displayMsg(event)" onmouseup="hide(event)">
+    <span id="pulse"></span>
+
+    <script>
+      function displayMsg(event) {
+        var msg = document.getElementById("pulse");
+        msg.style.visibility = "visible";
+        msg.style.left = event.clientX - 15 + "px";
+        msg.style.top = event.clientY - 15 + "px";
+      }
+
+      function hide() {
+        var msg = document.getElementById("pulse");
+        msg.style.visibility = "hidden";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>Image stack</title>
+    <style>
+      .img_stack {
+        height: 300;
+        width: 300;
+        position: absolute;
+      }
+      #img1 {
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+      #img2 {
+        top: 100;
+        left: 100;
+        z-index: 0;
+      }
+      #img3 {
+        top: 200;
+        left: 200;
+        z-index: 0;
+      }
+      #img4 {
+        top: 300;
+        left: 300;
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img_container">
+      <img
+        src="img1.jfif"
+        alt="img1"
+        class="img_stack"
+        onclick="moveToTop('img1')"
+        id="img1"
+      />
+      <img
+        src="img2.jfif"
+        alt="img2"
+        class="img_stack"
+        onclick="moveToTop('img2')"
+        id="img2"
+      />
+      <img
+        src="img3.jfif"
+        alt="img3"
+        class="img_stack"
+        onclick="moveToTop('img3')"
+        id="img3"
+      />
+      <img
+        src="img4.jfif"
+        alt="img4"
+        class="img_stack"
+        onclick="moveToTop('img4')"
+        id="img4"
+      />
+    </div>
+    <script src="image_stack.js" type="text/javascript"></script>
+  </body>
+</html>
