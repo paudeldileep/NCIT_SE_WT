@@ -1,0 +1,123 @@
+<!-- digital clock using js -->
+<html>
+  <head>
+    <title>Digital Clock</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Orbitron"
+    />
+
+    <style>
+      body {
+        font-family: "Orbitron", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #clock {
+        width: 500px;
+        height: 400px;
+        border-radius: 2%;
+        background-color: #fff;
+        box-shadow: 0 0 5px #000;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border: 1px solid #000;
+      }
+      #clock > .time {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .time > span {
+        display: block;
+        font-size: 40px;
+        font-weight: bold;
+        margin: 0 5px;
+      }
+      .t {
+        /* make fxed width */
+        width: 70px;
+      }
+      .day {
+        letter-spacing: 2px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock">
+      <div class="time">
+        <span class="t" id="hour"></span><span class="dots">:</span
+        ><span class="t" id="minute"></span><span class="dots">:</span>
+        <span class="t" id="second"></span><span class="dots">:</span>
+        <span class="t" id="meridiem"></span>
+      </div>
+      <div class="day" id="day"></div>
+    </div>
+    <script>
+      function clock() {
+        var d = new Date();
+        var hours = d.getHours();
+        var minutes = d.getMinutes();
+        var seconds = d.getSeconds();
+        var day = d.getDay();
+        var date = d.getDate();
+        var month = d.getMonth();
+        var year = d.getFullYear();
+        var days = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+        var months = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        var meridiem = "AM";
+        if (hours > 12) {
+          hours = hours - 12;
+          meridiem = "PM";
+        }
+        if (hours < 10) {
+          hours = "0" + hours; // add zero in front of hours
+        }
+        if (minutes < 10) {
+          minutes = "0" + minutes;
+        }
+        if (seconds < 10) {
+          seconds = "0" + seconds;
+        }
+        document.getElementById("hour").innerHTML = hours;
+        document.getElementById("minute").innerHTML = minutes;
+        document.getElementById("second").innerHTML = seconds;
+        document.getElementById("meridiem").innerHTML = meridiem;
+        //document.getElementById('time').innerHTML = hours + ":" + minutes + ":" + seconds + " " + meridiem;
+        document.getElementById("day").innerHTML =
+          days[day] + ", " + date + " " + months[month] + " " + year;
+
+        //setTimeout(clock, 1000);  //option 1
+      }
+      setInterval(clock, 1000); //option 2
+      //clock();  option 1
+    </script>
+  </body>
+</html>

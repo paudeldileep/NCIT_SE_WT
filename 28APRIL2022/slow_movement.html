@@ -1,0 +1,49 @@
+<!-- slow movement of element using js -->
+<html>
+  <head>
+    <title>Slow movement of element Js</title>
+    <style>
+      #text {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <span id="text">Hello</span>
+    <script>
+      var finalTop = 400;
+      var finalLeft = 400;
+      function moveElement() {
+        var elem = document.getElementById("text");
+        var initialTop = document.getElementById("text").style.top;
+        var initialLeft = document.getElementById("text").style.left;
+        var id = setInterval(frame, 10); //calls frame every 10ms
+        function frame() {
+          if (initialTop == finalTop && initialLeft == finalLeft) {
+            clearInterval(id);
+            console.log("done");
+            //set initial position
+            document.getElementById("text").style.top = 0 + "px";
+            document.getElementById("text").style.left = 0 + "px";
+          } else {
+            if (initialTop < finalTop) {
+              initialTop++;
+            } else {
+              initialTop--;
+            }
+            if (initialLeft < finalLeft) {
+              initialLeft++;
+            } else {
+              initialLeft--;
+            }
+            elem.style.top = initialTop + "px";
+            elem.style.left = initialLeft + "px";
+          }
+        }
+      }
+      moveElement();
+    </script>
+  </body>
+</html>

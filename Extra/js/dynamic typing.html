@@ -1,0 +1,25 @@
+<!-- dynamic typing text -->
+
+<html>
+  <head>
+    <title>Dynamic typing text</title>
+  </head>
+  <body>
+    <div id="text"></div>
+    <script>
+      var text = "Hello World";
+      var i = 0;
+      var speed = 1000;
+      var timer = setInterval(function () {
+        if (i < text.length) {
+          document.getElementById("text").innerHTML += text.charAt(i);
+          i++;
+        } else {
+          clearInterval(timer);
+        }
+      }, speed);
+
+      //delete text
+    </script>
+  </body>
+</html>
