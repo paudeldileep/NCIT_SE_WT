@@ -38,6 +38,8 @@ if (isset($_FILES['userimage'])) {
             echo "<br>Target path: " . $target_path;
             echo "<br>";
             echo "<img src='$target_path' width='100' height='100'>";
+            //save to db
+
         } else {
             echo "There was an error uploading the file";
         }
