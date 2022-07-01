@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //check if dob is valid, if not, redirect to signup page
 
         //check if email is already in use, if so, redirect to signup page
-        include_once '../db/connect.php';
+        include_once 'db/connect.php';
         $db = mysqli_select_db($connection, 'social_network');
         $query = "SELECT * FROM users WHERE user_email = '$email'";
         $result = mysqli_query($connection, $query);
@@ -28,23 +28,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             //new user
             //check for image
             if (isset($_FILES['user_image'])) {
-                if ($_FILES['user_image']['name'] != '') {
-                    $image_name = $_FILES['user_image']['name'];
-                    $image_type = $_FILES['user_image']['type'];
-                    $image_tmp_name = $_FILES['user_image']['tmp_name'];
-                    $new_image_name = rand(1, 10000) . '_' . $name . '_' . $image_name;
-                    $image_path = '../files/' . $new_image_name;
+                $image_name = $_FILES['user_image']['name'];
+                $image_type = $_FILES['user_image']['type'];
+                $image_tmp_name = $_FILES['user_image']['tmp_name'];
+                $new_image_name = rand(1, 10000) . '_' . $name . '_' . $image_name;
+                $image_path = 'files/' . $new_image_name;
 
-                    //check for image file type
-                    $supported_types = array('image/jpeg', 'image/gif', 'image/png');
-                    // echo $image_type;
+                //check for image file type
+                $supported_types = array('image/jpeg', 'image/gif', 'image/png');
+                // echo $image_type;
 
-                    if (in_array($image_type, $supported_types)) {
-                        echo 'in array';
-                    } else {
-                        header('Location: signup.php?error=Image file type not supported' . '&name=' . $name . '&email=' . $email . '&dob=' . $dob);
-                        return;
-                    }
+                if (in_array($image_type, $supported_types)) {
+                    echo 'in array';
+                } else {
+                    header('Location: signup.php?error=Image file type not supported' . '&name=' . $name . '&email=' . $email . '&dob=' . $dob);
+                    return;
                 }
             }
             //registration in datetime format with timezone
